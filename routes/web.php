@@ -18,7 +18,9 @@ Route::group(['middleware'=>['auth']],function(){
  Route::get('/profile', 'userProfile@index')->name('profile');
  Route::get('/home', 'HomeController@index')->name('home');
  Route::get("/posts/create","PostsController@create")->name('create');
-
+ Route::get('/about', function(){
+    return view('about');
+})->name("about");
 
 
 });

@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap'>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -48,26 +49,26 @@ top: 0px;
 z-index: -100;
 overflow:hidden;
 } */
-
-.videoPlayer {
-    min-height: 100%;
-    //min-width:100%; - if fit to width
-position:absolute;
-bottom:0;
-left:0;
-width: 100%;
-height: 100%;
-padding:0;
-margin:0;
-left: 0px;
-top: 0px;
-z-index: -100;
-overflow:hidden;
-object-fit: cover;
+body{
+    font-family:'Arvo',serif;
+    background: url("https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
 }
-/* #carousel{
-    padding-top: 100px;
-} */
+.about{
+    background-color: rgb(0, 229, 255, 0.5);
+    text-align: center;
+    font-size: 30px;
+    padding: 30px 20px 30px 20px;
+    top: 50px; 
+    width: 800px;
+    height: 300px;
+    margin: auto;
+    margin-top: 50px;
+    font-family: 'Roboto Slab', serif;
+}
+
+
      #myCarousel{
     width: 60%;
     margin: 0 auto;
@@ -259,7 +260,7 @@ font-size: 20px;"
                             <a class="nav-link" href={{route("home")}}>Home</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href={{route("about")}}>About</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href={{route("create")}}>Add</a>
