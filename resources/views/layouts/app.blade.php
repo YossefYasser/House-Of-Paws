@@ -158,6 +158,68 @@ ol.carousel-indicators li.active {
     margin-left: 20px;
     z-index: 0;
 }
+@media(max-width :858px){
+
+
+#myCarousel{
+    top:30px;
+    width: 500px;
+    margin: 0 auto;
+    height: 310px;
+}
+.carousel-indicators{
+    /* height: 30px; */
+    position: absolute;
+    bottom: 0%;
+    border: 0;
+    margin: 0;
+}
+.carousel-control p {
+     
+    display: none; 
+    
+}
+.carusel-button{
+    position: relative;  
+    top: 90px;
+    width: 15px;
+    height: 20px;
+    }
+   .carousel-inner{
+   width: 300px;
+   height:300px;
+}   
+
+.carousel-inner > .item > img{
+    width:100%; height: 100px;
+    margin: 0 auto;
+    
+}
+ .carousel-caption{
+                            
+position: relative;
+left: auto;
+right: auto;
+height: 110px;
+text-align : left;
+color: black;
+/* font-family: 'Roboto', sans-serif; */
+font-size: 20px;"
+}
+.carousel-caption h4{
+    font-size:15px;
+    padding-top: 0px;
+}
+.carousel-caption h2{
+    font-size:20px;
+    padding-top: 0px;
+}
+.carousel-item img{
+   height: 200px;
+}
+
+}
+
 
 
 
