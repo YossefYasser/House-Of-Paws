@@ -56,7 +56,7 @@ body{
     background-size: cover;
 }
 .about{
-    background-color: rgb(0, 229, 255, 0.5);
+    background-color: rgb(255,251,219,0.5);
     text-align: center;
     font-size: 30px;
     padding: 30px 20px 30px 20px;
