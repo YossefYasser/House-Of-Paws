@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap'>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
         
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -144,6 +145,18 @@ ol.carousel-indicators li.active {
 }
 #nav{
     position: relative;
+}
+.profile_left {
+    
+    border-radius: 3px;
+    width: 220px;
+    float: left;
+    position: relative;
+    background-color: rgb(0,0,0,0.1);
+    color: #004077;
+    margin-right: 20px;
+    margin-left: 20px;
+    z-index: 0;
 }
 
 

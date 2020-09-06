@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 <h1>edit post</h1>
 @section('content') 
 {{-- <form  method="post" action ="/posts/{{$post->id}}" >
@@ -39,11 +39,10 @@ ________________________________ --}}
                   </div>
         {!! Form::submit('Edit Post',["class"=>"btn btn-primary"])!!}
 {!! Form::close() !!}
-
-{!! Form::open(['method' => 'DELETE', "action"=> ["PostsController@destroy",$post->id]]) !!}
+{{-- {!! Form::open(['method' => 'DELETE', "action"=> ["PostsController@destroy",$post->id]]) !!}
 <a href="{{route("post.hdelete",["id"=>$post->id])}}"> </a>
 {!! Form::submit('Delete Post',["class"=>"btn btn-danger"])!!}
-{!! Form::close() !!}
+{!! Form::close() !!} --}}
 
 @endsection
 
