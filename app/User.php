@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',"role_id"
+        'name', 'email', 'password','phone',
     ];
 
     /**
@@ -39,15 +39,15 @@ class User extends Authenticatable
     public function post(){
         return $this->hasOne("App\post");
     }
-    
+
     public function role(){
         return $this->hasOne("App\Role")->withPivot("created_at");
-        
+
     }
-    
+
    public function getNameAttribute($value){
        return ucfirst($value);
    }
 
-  
+
 }

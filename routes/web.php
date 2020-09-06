@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Post;
+
+
 Auth::routes();
 
 
@@ -12,3 +16,29 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'userProfile@index')->name('profile');
 Route::resource("/posts","PostsController")->middleware('auth');
+
+Route::group(['middleware'=>['auth','admin']],function(){
+
+    Route::get('/dashboard','admin\AdminController@viewDashboard');
+
+
+    Route::get('/post-edit/{id}','admin\AdminController@edit');
+
+    Route::put('/post-edit-update/{id}','admin\AdminController@update');
+
+    Route::get('/post-delete/{id}','admin\AdminController@destroy');
+
+});
+Route::get('/create',function(){
+
+    $post=new Post();
+    $post->name='bobo';
+    $post->user_id=1;
+    $post->path='path';
+    $post->gender='Female';
+    $post->content='bobo is a cat';
+    $post->image='No Image yet';
+    $post->species='cat';
+    $post->save();
+
+});
