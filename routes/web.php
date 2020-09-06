@@ -19,14 +19,14 @@ Route::resource("/posts","PostsController")->middleware('auth');
 
 Route::group(['middleware'=>['auth','admin']],function(){
 
-    Route::get('/dashboard','admin\AdminController@viewDashboard');
+    Route::resource('/dashboard','admin\AdminController');
 
 
-    Route::get('/post-edit/{id}','admin\AdminController@edit');
+    // Route::get('/post-edit/{id}','admin\AdminController@edit');
 
-    Route::put('/post-edit-update/{id}','admin\AdminController@update');
+    // Route::put('/post-edit-update/{id}','admin\AdminController@update');
 
-    Route::get('/post-delete/{id}','admin\AdminController@destroy');
+    // Route::get('/post-delete/{id}','admin\AdminController@destroy');
 
 });
 Route::get('/create',function(){

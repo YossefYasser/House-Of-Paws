@@ -5,7 +5,7 @@
    
   <div class="container">
     
-    @if(count($posts) > 0 and $category != "")
+    @if(count($posts) > 0 and $species != "")
     
      <div id="myCarousel" class="carousel slide" data-ride="carousel"style=" width: 60%;
      margin: 0 auto; border-radius:7px; ">
@@ -19,7 +19,7 @@
             {{-- el i da variable bykhaly awl indicator active --}}
            @foreach($posts  as $key=> $post)
               
-              @if($category == $post->category  and ($post != $user->post()->get()->first()) )
+              @if($species == $post->species  and ($post != $user->post()->get()->first()) )
                
               <li data-target="#myCarousel" data-slide-to="{{$key+1}}" class="{{$i == 0 ? 'active' : '' }}" ></li>
               <?php $i++; ?>
@@ -35,7 +35,7 @@
       <?php $a = 0; ?>
                   @foreach($posts  as $key => $post )
                   
-                    @if($category == $post->category and ($post != $user->post()->get()->first()))
+                    @if($species == $post->species and ($post != $user->post()->get()->first()))
                     
                        <div class="carousel-item {{$a==0? "active" : ""}}" >
                         <?php $a++; ?>  

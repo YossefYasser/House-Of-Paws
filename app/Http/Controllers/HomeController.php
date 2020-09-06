@@ -26,13 +26,13 @@ class HomeController extends Controller
     {   $posts = Post::all();
         $user = auth()->user();
         $post= $user->post()->get();
-        $category="";
+        $species="";
         if(count($post)> 0){
-           $category=$post[0]["category"];
-           return view('home')->with("posts",$posts)->with("category",$category)->with("user",$user);
+           $species=$post[0]["species"];
+           return view('home')->with("posts",$posts)->with("species",$species)->with("user",$user);
         }
     
          
-        return view('home')->with("posts",$posts)->with("user",$user)->with("category",$category);
+        return view('home')->with("posts",$posts)->with("user",$user)->with("species",$species);
     }
 }

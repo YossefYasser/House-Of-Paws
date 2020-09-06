@@ -15,9 +15,8 @@ Edit Post
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <form action="/post-edit-update/{{$post->id}}" method="POST">
-                                {{csrf_field()}}
-                                {{method_field('PUT')}}
+                            {!! Form::model($post,['method' => 'PATCH', "action"=>["admin\AdminController@update",$post->id]]) !!}
+                               {{csrf_field()}}
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" name="postName" value="{{$post->title}}" class="form-control">

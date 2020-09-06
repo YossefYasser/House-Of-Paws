@@ -40,10 +40,12 @@
                                 <td>{{$post->body}}</td>
                                 <td><img src="{{$post->path}} " style="width:150px; height:150px;"></td>
                                 <td>
-                                    <a href="/post-edit/{{$post->id}}" class="btn btn-success">EDIT</a>
+                                    <a href="{{route('dashboard.edit',$post->id)}}" class="btn btn-success">EDIT</a>
                                 </td>
                                 <td>
-                                    <a href="/post-delete/{{$post->id}}" class="btn btn-danger">DELETE</a>
+                                        {!! Form::open(['method' => 'DELETE', "action"=> ["admin\AdminController@destroy",$post->id]]) !!} 
+                                        {!! Form::submit('Delete Post',["class"=>"btn btn-danger"])!!}
+                                        {!! Form::close() !!}
                                 </td>
                             </tr>
                             @endforeach
