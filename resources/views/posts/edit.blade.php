@@ -37,7 +37,7 @@ ________________________________ --}}
                 <img src="{{"../../".$post->path}}" alt="There is no image">
                 
                   </div>
-        {!! Form::submit('Edit Post',["class"=>"btn btn-primary"])!!}
+{!! Form::submit('Edit Post',["class"=>"btn btn-primary"])!!}
 {!! Form::close() !!}
 {{-- {!! Form::open(['method' => 'DELETE', "action"=> ["PostsController@destroy",$post->id]]) !!}
 <a href="{{route("post.hdelete",["id"=>$post->id])}}"> </a>

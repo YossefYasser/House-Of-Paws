@@ -32,17 +32,17 @@
                             </thead>
                             <tbody>
                             @foreach($posts as $post)
-                            <tr>
+                            <tr style="font-size:20px;">
                                 <td>{{$post->id}}</td>
                                 <td>{{$post->title}}</td>
                                 <td>{{$post->species}}</td>
                                 <td>{{$post->gender}}</td>
                                 <td>{{$post->body}}</td>
                                 <td><img src="{{$post->path}} " style="width:150px; height:150px;"></td>
-                                <td>
+                                <td style="font-size:17px;">
                                     <a href="{{route('dashboard.edit',$post->id)}}" class="btn btn-success">EDIT</a>
                                 </td>
-                                <td>
+                                <td style="font-size:17px;">
                                         {!! Form::open(['method' => 'DELETE', "action"=> ["admin\AdminController@destroy",$post->id]]) !!} 
                                         {!! Form::submit('Delete Post',["class"=>"btn btn-danger"])!!}
                                         {!! Form::close() !!}

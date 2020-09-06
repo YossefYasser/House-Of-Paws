@@ -18,8 +18,7 @@ class AdminController extends Controller
     {
         $posts=Post::all();
 
-        return view('admin.dashboard')->with('posts',$posts);   
-     }
+        return view('admin.dashboard')->with('posts',$posts);    }
 
     /**
      * Show the form for creating a new resource.
@@ -96,7 +95,7 @@ class AdminController extends Controller
     {
         $post=Post::findorfail($id);
         $post->delete();
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('status','Post deleted successfully');
     }
    /* public function listUsersForRoles(){
 
