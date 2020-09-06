@@ -19,10 +19,10 @@
         {!! Form::text('title',null,["class"=>"form-control"])!!}
         {!! Form::label('body','Post:') !!}
         {!! Form::text('body',null,["class"=>"form-control"])!!}
-        {!! Form::label('sex',"Select Your Species:") !!}
-        {!! Form::select('category',["cat"=>"cat","dog"=>"dog","bird"=>"bird"],null)!!}
-        {!! Form::label('sex',"Select Your Gender:") !!}
-        {!! Form::select('sex',["male"=>"male","female"=>"female"],null)!!}
+        {!! Form::label('species',"Select Your Species:") !!}
+        {!! Form::select('species',["cat"=>"cat","dog"=>"dog","bird"=>"bird"],null)!!}
+        {!! Form::label('gedner',"Select Your Gender:") !!}
+        {!! Form::select('gender',["male"=>"male","female"=>"female"],null)!!}
 
         
 </div>

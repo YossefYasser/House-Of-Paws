@@ -52,7 +52,8 @@ class PostsController extends Controller
             "title"=>"required|max:50",
             "body"=>"required|max:144",
              "featured"=>"required|image",
-             "category"=>"required",
+             "species"=>"required",
+             "gender"=>"required",
 
 
         ]);
@@ -61,7 +62,6 @@ class PostsController extends Controller
         $featured->move('upload/posts',$featured_new_name);
         $post = new Post;
         $post->title = $request->title;
-        $post->body = $request->body;
         $post->body = $request->body;
         $post->species = $request->species;
         $post->user_id = $user->id;

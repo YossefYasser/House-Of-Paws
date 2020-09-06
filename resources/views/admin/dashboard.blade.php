@@ -38,7 +38,7 @@
                                 <td>{{$post->species}}</td>
                                 <td>{{$post->gender}}</td>
                                 <td>{{$post->body}}</td>
-                                <td>{{$post->path}}</td>
+                                <td><img src="{{$post->path}} " style="width:150px; height:150px;"></td>
                                 <td>
                                     <a href="/post-edit/{{$post->id}}" class="btn btn-success">EDIT</a>
                                 </td>
