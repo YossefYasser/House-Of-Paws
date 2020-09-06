@@ -3,8 +3,8 @@
 
 
 @section("content")
+@if(!empty($post))
 <div class="profile_left" style="">
-
 <img src="{{$post->path}}" style='border-radius:3px; margin:10px ; width:200px; height;200' alt="There is no image">
 <br>
 <p style="font-size:18px; margin-left:9px; margin-bottom:0px;">Username : {{$user->name }}</p>
@@ -26,5 +26,12 @@
 {!! Form::close() !!}
  
 </div>
+@else
+<div class="alert alert-warning">
+    <h1>You Haven't Post Anything Yet<h1>
+        <h4> </h4>
+        <a class="btn btn-primary" href="{{route('create')}}">Add Your Post From Here</a>
 
+  </div>
+@endif
 @endsection

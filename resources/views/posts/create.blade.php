@@ -12,21 +12,25 @@
 
 {!! Form::open(["file"=> true,'method' => 'POST', "action"=> "PostsController@store","enctype"=>"multipart/form-data"]) !!}
 
-<div class="form-group">
+<div class="form-group" style="margin-left:15px;padding:10px; ;" >
         {!! Form::file('featured')!!}
-        <br>
+
+        
+        <br><br>
         {!! Form::label('title','Title:') !!}
         {!! Form::text('title',null,["class"=>"form-control"])!!}
-        {!! Form::label('body','Post:') !!}
+        {!! Form::label('body','Description:') !!}
         {!! Form::text('body',null,["class"=>"form-control"])!!}
+        <br>
         {!! Form::label('species',"Select Your Species:") !!}
         {!! Form::select('species',["cat"=>"cat","dog"=>"dog","bird"=>"bird"],null)!!}
         {!! Form::label('gedner',"Select Your Gender:") !!}
         {!! Form::select('gender',["male"=>"male","female"=>"female"],null)!!}
+        <br>
+        <input type="submit" name="submit" class="btn btn-primary">
 
         
 </div>
-<input type="submit" name="submit">
 {!! Form::close() !!}
 @if (count($errors))
   <br>
@@ -47,7 +51,9 @@
 @else
    <div class="alert alert-warning">
      <h1>You Already Have a Post<h1>
-         <h4> Wanna Replace It With A New One?</h4>
+         <h4> Wanna Edit it ?</h4>
+         <a class="btn btn-primary" href="{{route('posts.edit',$user->post()->get()->first()->id)}}"> Edit Post</a>
+
    </div>
    
 

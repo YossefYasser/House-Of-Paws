@@ -13,9 +13,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'userProfile@index')->name('profile');
-Route::resource("/posts","PostsController")->middleware('auth');
+Route::group(['middleware'=>['auth']],function(){
+ Route::resource("/posts","PostsController");
+ Route::get('/profile', 'userProfile@index')->name('profile');
+ Route::get('/home', 'HomeController@index')->name('home');
+ Route::get("/posts/create","PostsController@create")->name('create');
+
+
+
+});
 
 Route::group(['middleware'=>['auth','admin']],function(){
 

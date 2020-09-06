@@ -262,10 +262,10 @@ font-size: 20px;"
                             <a class="nav-link" href="#">About</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Add</a>
+                            <a class="nav-link" href={{route("create")}}>Add</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Edit</a>
+                            <a class="nav-link"href={{route("profile")}}>Profile</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">Matches</a>

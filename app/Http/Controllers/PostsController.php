@@ -49,7 +49,7 @@ class PostsController extends Controller
 
         $request->validate(
         [
-            "title"=>"required|max:50",
+            "title"=>"required|max:20",
             "body"=>"required|max:144",
              "featured"=>"required|image",
              "species"=>"required",

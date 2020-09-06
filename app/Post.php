@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-
+ 
+ 
  protected $fillable =[
 "title","body",'user_id',"path","sex","category",
 
@@ -27,5 +28,4 @@ class Post extends Model
  return asset($featured);
  }
 }
-
-
+ 
