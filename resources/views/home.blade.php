@@ -5,7 +5,7 @@
    
   <div class="container">
     
-    @if(count($posts) > 0 and $species != "")
+    @if(count($posts) > 1 and $species = "")
     
      <div id="myCarousel" class="carousel slide" data-ride="carousel"style=" width: 60%;
      margin: 0 auto; border-radius:7px; ">

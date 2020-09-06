@@ -20,6 +20,7 @@ Route::resource("/posts","PostsController")->middleware('auth');
 Route::group(['middleware'=>['auth','admin']],function(){
 
     Route::resource('/dashboard','admin\AdminController');
+    Route::get('/dashboard','admin\AdminController@index')->name("dashboard");
 
 
     // Route::get('/post-edit/{id}','admin\AdminController@edit');
