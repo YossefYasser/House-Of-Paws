@@ -5,7 +5,7 @@
    
   <div class="container">
     
-    @if(count($posts) > 1 and $species = "")
+    @if(count($posts) > 1 and $species != "")
     
      <div id="myCarousel" class="carousel slide" data-ride="carousel"style=" width: 60%;
      margin: 0 auto; border-radius:7px; ">
@@ -70,13 +70,30 @@
         <button class="btn btn-success carusel-button " style="padding: 4px 20px 1px 20px;"><p>like</p></button>
         <span class="sr-only">Next</span>
       </a>
+      @else
+       @if(count($posts) <= 1 and $species != "")
+       
+        <div class="alert alert-warning">
+            <h1>There Are No New Posts To Show At The Moment.. <h1>
+                
+       
+          </div>
+       
+       @else
+       <div class="alert alert-warning">
+        <h1>Create Yout First Post Right Now To See Other's Posts! <h1>
+            <a class="btn btn-primary" href="{{route('create')}}">Add Your Post From Here</a>
+            
+   
+      </div>
+        @endif
+
       @endif
     </div>
     </div>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ 
+
+<!-- Latest compiled JavaScript -->
      <script>
     $(function(){
     $('.carousel').carousel({

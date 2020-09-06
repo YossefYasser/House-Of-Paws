@@ -28,7 +28,7 @@
 </div>
 @else
 <div class="alert alert-warning">
-    <h1>You Haven't Post Anything Yet<h1>
+    <h1>You Haven't Posted Anything Yet<h1>
         <h4> </h4>
         <a class="btn btn-primary" href="{{route('create')}}">Add Your Post From Here</a>
 

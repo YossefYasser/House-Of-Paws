@@ -52,11 +52,22 @@
             <ul class="nav">
                 
                 <li class="active ">
-                    <a href="{{route("dashboard")}}">
+                    <a href="{{route("home")}}">
                         <i class="now-ui-icons design_app"></i>
+                        
+                        <p>Go To Site</p>
+                    </a>
+                    
+                </li>
+                <li class="active ">
+                    <a href="{{route("dashboard")}}">
+                        <i class="now-ui-icons design_bullet-list-67"></i>
                         <p>Dashboard</p>
                     </a>
+                    
                 </li>
+               
+                
                
             </ul>
         </div>
