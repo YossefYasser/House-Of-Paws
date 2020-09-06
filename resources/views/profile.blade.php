@@ -19,11 +19,12 @@
     <h2 style="font-weight:bold">{{$post->title}}</h2>
 <h5>{{$post->body}}</h5>
  <br>
- {!! Form::open(['method' => 'DELETE', "action"=> ["PostsController@destroy",$post->id]]) !!}
-<a href="{{route('posts.edit',$post->id)}}"> <button class="btn btn-primary" style="margin-right: 15px;">Edit Post</button></a>
  
+ <a href="{{route('posts.edit',$post->id)}}"> <button class="btn btn-primary" style="margin-right: 15px; float:left">Edit Post</button></a>
+ {!! Form::open(['method' => 'DELETE', "action"=> ["PostsController@destroy",$post->id]]) !!} 
  {!! Form::submit('Delete Post',["class"=>"btn btn-danger"])!!}
 {!! Form::close() !!}
+ 
 </div>
 
 @endsection

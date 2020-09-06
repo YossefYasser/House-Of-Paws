@@ -158,7 +158,7 @@ ol.carousel-indicators li.active {
     margin-left: 20px;
     z-index: 0;
 }
-@media(max-width :858px){
+@media(max-width :758px){
 
 
 #myCarousel{
@@ -240,9 +240,7 @@ font-size: 20px;"
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -258,7 +256,7 @@ font-size: 20px;"
                             @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href={{route("home")}}>Home</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">About</a>

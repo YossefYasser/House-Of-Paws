@@ -23,7 +23,7 @@
                         <table class="table">
                             <thead class=" text-primary">
                             <th>Post ID</th>
-                            <th>Name</th>
+                            <th>Title</th>
                             <th>Species</th>
                             <th>Gender</th>
                             <th>Content</th>
@@ -34,11 +34,11 @@
                             @foreach($posts as $post)
                             <tr>
                                 <td>{{$post->id}}</td>
-                                <td>{{$post->name}}</td>
+                                <td>{{$post->title}}</td>
                                 <td>{{$post->species}}</td>
                                 <td>{{$post->gender}}</td>
-                                <td>{{$post->content}}</td>
-                                <td>{{$post->image}}</td>
+                                <td>{{$post->body}}</td>
+                                <td>{{$post->path}}</td>
                                 <td>
                                     <a href="/post-edit/{{$post->id}}" class="btn btn-success">EDIT</a>
                                 </td>

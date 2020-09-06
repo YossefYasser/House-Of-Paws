@@ -63,43 +63,13 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->body = $request->body;
         $post->body = $request->body;
-        $post->category = $request->category;
+        $post->species = $request->species;
         $post->user_id = $user->id;
-        $post->sex = $request->sex;
+        $post->gender = $request->gender;
         $post->path = "upload/posts/".$featured_new_name;
         $post->save();
+    }
         /*
-        ________________
-        
-        display errors
-        ________________
-        
-        Post::create($request->all());
-        // $user = auth()->user();
-        // $id= $user->id;
-        
-        $post = new Post;
-        $post->title = $request->title
-        return redirect("/posts");
-        
-        */
-        /*
-        $ImageName = $_FILES['file']['name'];
-        $fileElementName = 'file';
-        $path = public_path('images');
-        $location = $path . $_FILES['file']['name']; 
-        move_uploaded_file($_FILES['file']['tmp_name'], $location);
-        
-        $post = new Post;
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->user_id = $request->user_id;
-        $post->path = $_FILES["file"]["name"];
-        $post->save();
-        return redirect("/posts");
-        */
-
-        
         
          
     }
@@ -144,7 +114,7 @@ class PostsController extends Controller
         $post->title=$request->title;
         $post->body=$request->body;
         $post->save();
-        return redirect("/posts");
+        return redirect("/home");
     }
 
     /**
@@ -165,7 +135,7 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->delete(); 
-        return redirect("/posts");
+        return redirect("/home");
 
     }
 }

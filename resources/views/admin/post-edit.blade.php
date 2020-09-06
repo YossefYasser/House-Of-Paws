@@ -20,17 +20,17 @@ Edit Post
                                 {{method_field('PUT')}}
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" name="postName" value="{{$post->name}}" class="form-control">
+                                    <input type="text" name="postName" value="{{$post->title}}" class="form-control">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Content</label>
-                                    <input type="text" name="postContent" value="{{$post->content}}" class="form-control">
+                                    <input type="text" name="postContent" value="{{$post->body}}" class="form-control">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Image</label>
-                                    <input type="text" name="postImage" value="{{$post->image}}" class="form-control">
+                                    <input type="text" name="postImage" value="{{$post->path}}" class="form-control">
                                 </div>
 
                                 <div class="form-group">

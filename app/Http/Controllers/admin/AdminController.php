@@ -73,11 +73,11 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $post=Post::find($id);
-        $post->name=$request->input('postName');
-        $post->content=$request->input('postContent');
+        $post->title=$request->input('postName');
+        $post->body=$request->input('postContent');
         $post->gender=$request->input('postGender');
         $post->species=$request->input('postSpecies');
-        $post->image=$request->input('postImage');
+        $post->path=$request->input('postImage');
         $post->update();
 
 

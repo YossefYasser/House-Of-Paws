@@ -17,11 +17,11 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->integer("user_id");
             $table->string("name");
-            $table->text("content");
+            $table->text("body");
             $table->string('gender');
             $table->string('species');
             $table->string("path");
-            $table->string('image');
+            // $table->string('image');
             $table->timestamps();
         });
     }
