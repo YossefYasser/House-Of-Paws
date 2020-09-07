@@ -56,6 +56,7 @@ body{
     background-size: cover;
 }
 .about{
+    border-radius:5px;
     background-color: rgb(255,251,219,0.5);
     text-align: center;
     font-size: 30px;
@@ -149,11 +150,11 @@ ol.carousel-indicators li.active {
 }
 .profile_left {
     
-    border-radius: 3px;
+    border-radius: 5px;
     width: 220px;
     float: left;
     position: relative;
-    background-color: rgb(0,0,0,0.1);
+    background-color:rgb(255,251,219,0.5);
     color: #004077;
     margin-right: 20px;
     margin-left: 20px;
@@ -232,7 +233,7 @@ font-size: 20px;"
         <nav  class="navbar navbar-expand-md navbar-dark bg-dark"role="navigation" id="nav">
             
             <div class="container-fluid" id="lolo">
-                <a class="navbar-brand" href="{{ url('/') }}" >
+                <a class="navbar-brand" href="{{ route("home") }}" >
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

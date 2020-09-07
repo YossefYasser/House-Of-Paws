@@ -68,6 +68,8 @@ class PostsController extends Controller
         $post->gender = $request->gender;
         $post->path = "upload/posts/".$featured_new_name;
         $post->save();
+        return redirect("/home");
+
     }
         /*
         
@@ -113,6 +115,13 @@ class PostsController extends Controller
         $post = Post::find($id);
         $post->title=$request->title;
         $post->body=$request->body;
+        if($request->path !="")
+        {
+        $post->path=$request->path;
+        }
+
+        $post->species = $request->species;
+        $post->gender = $request->gender;
         $post->save();
         return redirect("/home");
     }
