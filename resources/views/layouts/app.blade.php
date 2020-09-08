@@ -115,21 +115,7 @@ ol.carousel-indicators li.active {
    /* font-family: 'Noto Sans JP', sans-serif; */
    font-family: 'Noto Sans JP', sans-serif;
    }
-.carusel-button{
-   padding:150px;
-   top:-300px;
-   position:relative; 
-   left: 0;
-   margin-left: 0; 
- 
-}
- #right{
-    right: 500px;
-    /* position: relative; */
-}
-#left{
-    right:500px;
-}
+
 .carousel-caption  {
    /* font-family: 'Arvo', serif; */
    
@@ -177,6 +163,26 @@ ol.carousel-indicators li.active {
 .carousel-control-next{
     align-items: flex-end;; /* Aligns it at the bottom */
 }
+.carusel-button{
+   /* padding:150px; */
+   
+   padding-bottom:5px;
+   position:relative; 
+   left: 0;
+   margin-left: 0; 
+ 
+}
+ #right{
+    left: 10px;
+    position: relative;
+    bottom:350px;
+}
+#left{
+    right:500px;
+    position: relative;
+    bottom:350px;
+}
+
 @media(max-width :758px){
 
 
@@ -184,22 +190,20 @@ ol.carousel-indicators li.active {
     top:30px;
     width: 500px;
     margin: 0 auto;
-    height: 310px;
+    height: 330px;
 }
 .carousel-indicators{
-    /* height: 30px; */
-    position: absolute;
-    bottom: 0%;
-    border: 0;
-    margin: 0;
+    height: auto;
+    position: relative;
+   
 }
-.carousel-control p {
+.carusel-button p {
      
     display: none; 
     
 }
 .carusel-button{
-    /* position: relative;   */
+    position: relative;  
     top: 90px;
     width: 15px;
     height: 20px;
@@ -210,21 +214,24 @@ ol.carousel-indicators li.active {
 }   
 
 .carousel-inner > .item > img{
-    width:100%; height: 100px;
+    width:100%; height: 200px;
     margin: 0 auto;
     
+    
+    
 }
- .carousel-caption{
+.carousel-inner {
                             
 position: relative;
 left: auto;
 right: auto;
-height: 110px;
+height: auto;
 text-align : left;
 color: black;
 /* font-family: 'Roboto', sans-serif; */
 font-size: 20px;"
 }
+
 .carousel-caption h4{
     font-size:15px;
     padding-top: 0px;
@@ -233,16 +240,23 @@ font-size: 20px;"
     font-size:20px;
     padding-top: 0px;
 }
-.carousel-item img{
-   height: 200px;
-}
+/* .carousel-item img{
+   height: 300px; */
+
 #right{
-    top: -200px;
-    right: 50px;
+    top: -220px;
+    left: 18px;
 }
 #left{
-    top: -200px;
+    top:-220px;
+    
+    
 }
+}
+
+.carousel .carousel-control-prev {
+  border-radius: $12;
+  overflow: hidden;
 }
 
 
