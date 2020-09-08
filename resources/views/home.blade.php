@@ -55,23 +55,43 @@
                            height: 150px;
                            text-align : left;
                            color: black;
-                          ">
+                           font-family:'Arvo',serif;
+                          " >
                            
-                           <h2 >{{$post->title}}</h2>
+                          <span class="no"> <h2 >{{$post->title}}</h2>
                            
                            <input  type ="hidden" id="userid" value={{$user->id}} >
                            {{-- <input id="name2"value={{$p}} > --}}
                            
                            <?php $k++ ?>
-                           <h4 >{{$post->body}}</h4>
+                           <h4 >{{$post->body}}</h4><span>
                           </div>
                         </div>
                         
                      @endif
                    @endforeach 
+                   <div class="carousel-item">
+                    <img  src="https://images.pexels.com/photos/1883300/pexels-photo-1883300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%; max-height: 400px;border-radius: 5px;">
+                    <div class="carousel-caption jumbotron" style=
+                    "
+                    padding:45px;background-color:rgb(255,251,219,0.5);
+                    position: relative;
+                    left: auto;
+                    right: auto;
+                    margin-top:20px;
+                    height: 150px;
+                    text-align : left;
+                    color: black;
+                    font-size: 40px;
+                    font-family:'Arvo',serif;">
+                    
+                    <h2 style="text-align: center;">There are no more Posts to Show right now..</h2>
+ 
+                   </div>
+                  </div>
                  
      </div>    
-     <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" style=>
+     <a class="carousel-control-prev" href="#myCarousel" data-slide="next" style=>
       <button class="btn btn-danger  carusel-button" style="padding: 12px 20px 0px 20px;" id="left"><p>Dislike</p></button>    </a>
     <a class="carousel-control-next" href="#myCarousel" data-slide="next">
       <button class="btn btn-success carusel-button " style="padding:12px 20px 0px 20px; " id="right"><p>like</p></button>    </a>
@@ -204,6 +224,42 @@ $(document).on('click','#left',function(){
     // $(this).carousel('cycle');
     // });
     // }); 
+              // $(document).ready( function() {
+                  
+              //    $('.container').delay(5000).fadeOut();
+          
+              //   });
+              $(document).ready( function() {
+    var carouselLength = $('.carousel-item').length - 1;
+
+// If there is more than one item
+if (carouselLength) {
+    $('.carousel-control-next').removeClass('d-none');
+}
+
+$('.carousel').carousel({
+    interval: false,
+    wrap: false
+}).on('slide.bs.carousel', function (e) {
+    // First one
+    if (e.to == 0) {
+        $('.carousel-control-prev').addClass('d-none');
+        $('.carousel-control-next').removeClass('d-none');
+    } // Last one
+    else if (e.to == carouselLength) {
+        $('.carousel-control-prev').addClass('d-none');
+        $('.carousel-control-next').addClass('d-none');
+        $('.carousel-indicators').addClass('d-none');
+        $('.no').addClass('d-none');
+        // $('.container').delay(5000).fadeOut();
+
+    } // The rest
+    else {
+        $('.carousel-control-prev').removeClass('d-none');
+        $('.carousel-control-next').removeClass('d-none');
+    }
+});
+              });
     </script> 
 
 

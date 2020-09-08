@@ -23,6 +23,7 @@
     <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap'>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
         
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -182,6 +183,16 @@ ol.carousel-indicators li.active {
     position: relative;
     bottom:350px;
 }
+.footer{
+    background-color: rgba(0,0,0,0.5);
+    color: grey;
+    font-size: 15px;
+    padding: 5px 0;
+}
+.navbar-brand img{
+    height: 30px;
+    width: 30px;
+}
 
 @media(max-width :758px){
 
@@ -271,7 +282,7 @@ font-size: 20px;"
             
             <div class="container-fluid" id="lolo">
                 <a class="navbar-brand" href="{{ route("home") }}" >
-                    {{ config('app.name', 'Laravel') }}
+                    <h1 id="brandname" style="padding: 0%; font-size:20px; letter-spacing:1px; font-family: 'Arvo', serif; " >All about Paws</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -334,6 +345,11 @@ font-size: 20px;"
         <main class="py-4">
             @yield('content')
         </main>
+        <div class="footer">
+            <div class="container">
+                <p>&copy; Develop with FZ. all rights reserved.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
