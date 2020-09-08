@@ -168,7 +168,7 @@
     $.ajax({
 
         type:'post',
-        url:"{!! URL::to('/insert') !!}",
+        url:"{!! URL::to('/likeInsert') !!}",
         dataType: 'JSON',
         data: {
             "_method": 'get',
@@ -178,8 +178,8 @@
             "usertoid": usertoId,
         },
         success:function(data){
+            // alert("likeInsert");
             // alert(k);
-            // alert(data);
              k = k+1
         },
         error:function(){
@@ -206,7 +206,7 @@ $(document).on('click','#left',function(){
             "usertoid": usertoId,
         },
         success:function(data){
-             //alert(k);
+            //  alert("dislikeInser");
             // alert(data);
              k = k+1
         },
