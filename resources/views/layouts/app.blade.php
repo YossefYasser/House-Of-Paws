@@ -188,6 +188,11 @@ ol.carousel-indicators li.active {
     color: grey;
     font-size: 15px;
     padding: 5px 0;
+    margin-top: auto;
+    position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
 }
 .navbar-brand img{
     height: 30px;
@@ -263,6 +268,7 @@ font-size: 20px;"
     
     
 }
+
 }
 
 .carousel .carousel-control-prev {

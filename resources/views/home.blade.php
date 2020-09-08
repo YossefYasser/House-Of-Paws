@@ -100,10 +100,36 @@
     @else
        @if(count($posts) <= 1 and $species != "")
        
-        <div class="alert alert-warning" style="padding:25px;background-color:rgb(255,251,219,0.5); border-radius:5px; border:none;">
+        {{-- <div class="alert alert-warning" style="padding:25px;background-color:rgb(255,251,219,0.5); border-radius:5px; border:none;">
             <h1>There Are No New Posts To Show At The Moment.. <h1>
                 
        
+          </div> --}}
+          <div class="noPosts">
+            <img  src="https://images.pexels.com/photos/1883300/pexels-photo-1883300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:500px; max-height: 400px;border-radius: 5px;   display: block;
+            margin-left: auto;
+            margin-right: auto; bottom:0%; margin-bottom:0;">
+            <div class="jumbotron" style=
+            "
+            padding:45px;background-color:rgb(255,251,219,0.5);
+            position: relative;
+            left: auto;
+            right: auto;
+            margin-top:20px;
+            height: 150px;
+            width: 300px;
+            text-align : left;
+            color: black;
+            font-size: 40px;
+            font-family:'Arvo',serif;
+            width:500px; max-height: 400px;border-radius: 5px;   display: block;
+            margin-left: auto;
+            margin-right: auto; bottom:0%;
+            margin-top: 0;">
+            
+            <h2 style="text-align: center;">There are no more Posts to Show right now..</h2>
+
+           </div>
           </div>
        
        @else
