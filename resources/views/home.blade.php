@@ -71,7 +71,7 @@
                    @endforeach 
                  
      </div>    
-     <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" style=>
+     <a class="carousel-control-prev" href="#myCarousel" data-slide="next" style=>
       <button class="btn btn-danger  carusel-button" style="padding: 12px 20px 0px 20px;" id="left"><p>Dislike</p></button>    </a>
     <a class="carousel-control-next" href="#myCarousel" data-slide="next">
       <button class="btn btn-success carusel-button " style="padding:12px 20px 0px 20px; " id="right"><p>like</p></button>    </a>
@@ -122,7 +122,7 @@
     $.ajax({
 
         type:'post',
-        url:"{!! URL::to('/insert') !!}",
+        url:"{!! URL::to('/likeInsert') !!}",
         dataType: 'JSON',
         data: {
             "_method": 'get',
@@ -132,8 +132,8 @@
             "usertoid": usertoId,
         },
         success:function(data){
+            // alert("likeInsert");
             // alert(k);
-            // alert(data);
              k = k+1
         },
         error:function(){
@@ -160,7 +160,7 @@ $(document).on('click','#left',function(){
             "usertoid": usertoId,
         },
         success:function(data){
-             //alert(k);
+            //  alert("dislikeInser");
             // alert(data);
              k = k+1
         },
