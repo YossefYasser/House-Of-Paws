@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
     @section('content')
         
    
@@ -41,7 +42,7 @@
                         <?php $a++; ?>  
                           <img  src="{{$post->path}}" style="width:100%; max-height: 400px;">
                           
-                           <div class="carousel-caption" style="
+                           <div class="carousel-caption d-none d-md-block" style="
                            position: relative;
                            left: auto;
                            right: auto;
@@ -62,25 +63,25 @@
     </div>
     
       <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <button class="btn btn-danger  carusel-button" style="padding: 4px 20px 1px 20px;"><p>Dislike</p></button>
+      <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" role="button">
+        <button class="btn btn-danger  carusel-button" style="padding: 4px 20px 1px 20px;" id="left"><p>Dislike</p></button>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <button class="btn btn-success carusel-button " style="padding: 4px 20px 1px 20px;"><p>like</p></button>
+      <a class="carousel-control-next" href="#myCarousel" data-slide="next" role="button">
+        <button class="btn btn-success carusel-button " style="padding: 4px 20px 1px 20px;" id="right" onclick=""><p>like</p></button>
         <span class="sr-only">Next</span>
       </a>
       @else
        @if(count($posts) <= 1 and $species != "")
        
-        <div class="alert alert-warning">
+        <div style="padding:25px;background-color:rgb(255,251,219,0.5); border-radius:5px;">
             <h1>There Are No New Posts To Show At The Moment.. <h1>
                 
        
           </div>
        
        @else
-       <div class="alert alert-warning">
+       <div style="padding:25px;background-color:rgb(255,251,219,0.5); border-radius:5px;">
         <h1>Create Yout First Post Right Now To See Other's Posts! <h1>
             <a class="btn btn-primary" href="{{route('create')}}">Add Your Post From Here</a>
             

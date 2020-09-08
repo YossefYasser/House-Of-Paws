@@ -49,6 +49,7 @@ top: 0px;
 z-index: -100;
 overflow:hidden;
 } */
+
 body{
     font-family:'Arvo',serif;
     background: url("https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
@@ -115,12 +116,19 @@ ol.carousel-indicators li.active {
    }
 .carusel-button{
    padding:150px;
-   top:180px;
-   position:relative;
-   
-   
+   top:-300px;
+   position:relative; 
+   left: 0;
+   margin-left: 0; 
+ 
 }
-
+ #right{
+    right: 500px;
+    /* position: relative; */
+}
+#left{
+    right:500px;
+}
 .carousel-caption  {
    /* font-family: 'Arvo', serif; */
    
@@ -159,6 +167,15 @@ ol.carousel-indicators li.active {
     margin-left: 20px;
     z-index: 0;
 }
+.carousel-control-prev,
+.carousel-control-next{
+    align-items: flex-start;; /* Aligns it at the top */
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    align-items: flex-end;; /* Aligns it at the bottom */
+}
 @media(max-width :758px){
 
 
@@ -181,7 +198,7 @@ ol.carousel-indicators li.active {
     
 }
 .carusel-button{
-    position: relative;  
+    /* position: relative;   */
     top: 90px;
     width: 15px;
     height: 20px;
@@ -218,7 +235,13 @@ font-size: 20px;"
 .carousel-item img{
    height: 200px;
 }
-
+#right{
+    top: -200px;
+    right: 50px;
+}
+#left{
+    top: -200px;
+}
 }
 
 
