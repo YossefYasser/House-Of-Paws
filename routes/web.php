@@ -24,9 +24,7 @@ Route::group(['middleware'=>['auth']],function(){
  Route::get('/about', function(){
     return view('about');
 })->name("about");
-Route::get('/matches', function(){
-    return view('matches');
-})->name("matches");
+Route::get('/matches', "MatchesController@showMatches")->name("matches");
 
 });
 
@@ -55,4 +53,7 @@ Route::get('/create',function(){
     $post->species='cat';
     $post->save();
 
+});
+Route::get('/hello', function(){
+    return view('hello');
 });
