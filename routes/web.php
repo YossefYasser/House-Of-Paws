@@ -24,7 +24,9 @@ Route::group(['middleware'=>['auth']],function(){
  Route::get('/about', function(){
     return view('about');
 })->name("about");
-
+Route::get('/matches', function(){
+    return view('matches');
+})->name("matches");
 
 });
 
