@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\post;
 use App\user;
@@ -40,14 +40,25 @@ class HomeController extends Controller
     }
    
     public function likeInsert(request $request){
-        $like = new Likes;
-        $like->user_to = $request->usertoid;
-        $like->user_from = $request->userid;
+        //search in likes table if user_from liked user_to before
+        $likes= DB::select("select* from likes where user_to = '$request->userid' and user_from ='$request->usertoid'") ;
+        if (! empty($likes)){
+            DB::insert("insert into friends(user_id,friend_id)values('$request->userid','$request->usertoid')");
+            DB::insert("insert into friends(user_id,friend_id)values('$request->usertoid','$request->userid')");
+            DB::delete("delete from likes where user_to = '$request->userid' and user_from ='$request->usertoid'");
+        }
+        else{
+            $like = new Likes;
+            $like->user_to = $request->usertoid;
+            $like->user_from = $request->userid;
+            $like->save();
+
+        }
+          
         $seen = new Seen;
         $seen->user_id = $request->userid;
         $seen->post_id = $request->postid;
         $seen->save();
-        $like->save();
         return response()->json(['success'=>'Data is successfully added']);
     }
     public function seenInsert(request $request){
