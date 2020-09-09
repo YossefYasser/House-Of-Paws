@@ -18,8 +18,9 @@
             <?php $i = 0; ?> 
             {{-- el i da variable bykhaly awl indicator active --}}
            @foreach($posts  as $key=> $post)
-              
-              @if($species == $post->species  and ($post != $user->post()->get()->first()) )
+           {{-- and (in_array($post->id ,$seenposts) --}}
+           
+              @if($species == $post->species  and ($post != $user->post()->get()->first())and (!in_array($post->id ,$seenposts)))
                
               <li data-target="#myCarousel" data-slide-to="{{$key+1}}" class="{{$i == 0 ? 'active' : '' }}" ></li>
               <?php $i++; ?>
@@ -32,13 +33,14 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" >
         
-      <?php $a = 0;
+      <?php $active=0;$a = 0;
       $k=0?>
       {{-- k de 3ebara 3n variable by-increment m3 kol iteration bt7sl  --}}
                   @foreach($posts  as $key => $post )
                   
-                    @if($species == $post->species and ($post != $user->post()->get()->first()))
+                    @if($species == $post->species and ($post != $user->post()->get()->first())and (!in_array($post->id ,$seenposts)))
                     <input type="hidden" id="{{"name"."$k"}}"value={{$post->id}} >
+                    <?php $active=1?>
                     <input type="hidden" id="{{"userto"."$k"}}"value={{$post->user_id}} >
                     {{-- input hidden el id bta3o bykon 3la 7sb k btkon bkam ( name1,name2,name3) --}}
                        <div class="carousel-item item {{$a==0? "active" : ""}}" >
@@ -70,7 +72,7 @@
                         
                      @endif
                    @endforeach 
-                   <div class="carousel-item">
+                  <div class="carousel-item {{$active==0? "active" : ""}}">
                     <img  src="https://images.pexels.com/photos/1883300/pexels-photo-1883300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%; max-height: 400px;border-radius: 5px;">
                     <div class="carousel-caption jumbotron" style=
                     "
@@ -90,12 +92,13 @@
                    </div>
                   </div>
                  
-     </div>    
+     </div>
+     @if($active!=0)    
      <a class="carousel-control-prev" href="#myCarousel" data-slide="next" style=>
       <button class="btn btn-danger  carusel-button" style="padding: 12px 20px 0px 20px;" id="left"><p>Dislike</p></button>    </a>
     <a class="carousel-control-next" href="#myCarousel" data-slide="next">
       <button class="btn btn-success carusel-button " style="padding:12px 20px 0px 20px; " id="right"><p>like</p></button>    </a>
-  
+    @endif
     </div>
     @else
        @if(count($posts) <= 1 and $species != "")
