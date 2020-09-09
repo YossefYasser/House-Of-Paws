@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
     }
 
     /**
@@ -28,15 +29,23 @@ class HomeController extends Controller
     public function index()
     {   $posts = Post::all();
         $user = auth()->user();
+        $id = auth()->user()->id;
         $post= $user->post()->get();
         $species="";
+        $postat = DB::select("select post_id from seens  where user_id = '$user->id' ") ;
+        $seenposts=array();
+           foreach($postat as $postt )
+           {    
+               $seenposts[]=$postt->post_id;
+
+           }
         if(count($post)> 0){
            $species=$post[0]["species"];
-           return view('home')->with("posts",$posts)->with("species",$species)->with("user",$user);
+           return view('home')->with("posts",$posts)->with("species",$species)->with("user",$user)->with("seenposts",$seenposts);
         }
     
-         
-        return view('home')->with("posts",$posts)->with("user",$user)->with("species",$species);
+        
+        return view('home')->with("posts",$posts)->with("user",$user)->with("seenposts",$seenposts)->with("species",$species);
     }
    
     public function likeInsert(request $request){

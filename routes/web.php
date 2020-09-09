@@ -43,16 +43,7 @@ Route::group(['middleware'=>['auth','admin']],function(){
     // Route::get('/post-delete/{id}','admin\AdminController@destroy');
 
 });
-Route::get('/create',function(){
+Route::get('/hello',function(){
 
-    $post=new Post();
-    $post->name='bobo';
-    $post->user_id=1;
-    $post->path='path';
-    $post->gender='Female';
-    $post->content='bobo is a cat';
-    $post->image='No Image yet';
-    $post->species='cat';
-    $post->save();
-
+   return view("hello");
 });
