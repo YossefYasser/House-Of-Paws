@@ -14,13 +14,10 @@ class MatchesController extends Controller
        $users = array();
        foreach($matches as $match){
 
-           $friends[] = $match->friend_id;
-           $username = DB::select("select name from users where id = '$friends'");
-           foreach($username as $friendName){
-            $users[] = $friendName->name;
-        }
- }  
-
+           
+           $users[] = DB::select("select name,id,path from users where id = '$match->friend_id;'");
+           
+        };
        return view('matches')->with("friends", $friends)->with("users",$users);
     }
     
