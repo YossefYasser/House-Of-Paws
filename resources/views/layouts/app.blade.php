@@ -198,7 +198,9 @@ ol.carousel-indicators li.active {
     height: 30px;
     width: 30px;
 }
-
+/* .profilelink > a {
+    color: black;
+} */
 @media(max-width :758px){
 
 

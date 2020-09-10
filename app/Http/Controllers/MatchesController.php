@@ -15,7 +15,7 @@ class MatchesController extends Controller
        foreach($matches as $match){
 
            
-           $users[] = DB::select("select name,id,path from users where id = '$match->friend_id;'");
+           $users[] = DB::select("select name,id from users where id = '$match->friend_id;'");
            
         };
        return view('matches')->with("friends", $friends)->with("users",$users);
