@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -21,9 +22,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap'>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
         
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -51,27 +49,26 @@ z-index: -100;
 overflow:hidden;
 } */
 
-body{
-    font-family:'Arvo',serif;
-    background: url("https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
-    background-attachment: fixed;
-    background-size: cover;
+.videoPlayer {
+    min-height: 100%;
+    //min-width:100%; - if fit to width
+position:absolute;
+bottom:0;
+left:0;
+width: 100%;
+height: 100%;
+position: absolute;
+padding:0;
+margin:0;
+left: 0px;
+top: 0px;
+z-index: -100;
+overflow:hidden;
+object-fit: cover;
 }
-.about{
-    border-radius:5px;
-    background-color: rgb(255,251,219,0.5);
-    text-align: center;
-    font-size: 30px;
-    padding: 30px 20px 30px 20px;
-    top: 50px; 
-    width: 800px;
-    height: 300px;
-    margin: auto;
-    margin-top: 50px;
-    font-family: 'Roboto Slab', serif;
-}
-
-
+/* #carousel{
+    padding-top: 100px;
+} */
      #myCarousel{
     width: 60%;
     margin: 0 auto;
@@ -116,6 +113,13 @@ ol.carousel-indicators li.active {
    /* font-family: 'Noto Sans JP', sans-serif; */
    font-family: 'Noto Sans JP', sans-serif;
    }
+.carusel-button{
+   padding:150px;
+   top:180px;
+   position:relative;
+   
+   
+}
 
 .carousel-caption  {
    /* font-family: 'Arvo', serif; */
@@ -134,8 +138,11 @@ ol.carousel-indicators li.active {
 /* padding-bottom: 9px;*/
  cursor: pointer;
 }
-
-
+     
+/* #name{
+     padding-left:50px;  
+    
+}  */
 
 #lolo{
     padding-bottom: 0%;
@@ -143,79 +150,27 @@ ol.carousel-indicators li.active {
 #nav{
     position: relative;
 }
-.profile_left {
-    
-    border-radius: 5px;
-    width: 220px;
-    float: left;
-    position: relative;
-    background-color:rgb(255,251,219,0.5);
-    color: #004077;
-    margin-right: 20px;
-    margin-left: 20px;
-    z-index: 0;
+#Theusername{
+    color: white;
+    padding-left: 30px;
 }
-.carousel-control-prev,
-.carousel-control-next{
-    align-items: flex-start;; /* Aligns it at the top */
-}
-
-.carousel-control-prev,
-.carousel-control-next{
-    align-items: flex-end;; /* Aligns it at the bottom */
-}
-.carusel-button{
-   /* padding:150px; */
-   
-   padding-bottom:5px;
-   position:relative; 
-   left: 0;
-   margin-left: 0; 
- 
-}
- #right{
-    left: 10px;
-    position: relative;
-    bottom:350px;
-}
-#left{
-    right:500px;
-    position: relative;
-    bottom:350px;
-}
-.footer{
-    background-color: rgba(0,0,0,0.5);
-    color: grey;
-    font-size: 15px;
-    padding: 5px 0;
-    margin-top: auto;
-    position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-}
-.navbar-brand img{
-    height: 30px;
-    width: 30px;
-}
-/* .profilelink > a {
-    color: black;
-} */
-@media(max-width :758px){
+@media(max-width :858px){
 
 
 #myCarousel{
     top:30px;
     width: 500px;
     margin: 0 auto;
-    height: 330px;
+    height: 310px;
 }
 .carousel-indicators{
-    height: auto;
-    position: relative;
-   
+    /* height: 30px; */
+    position: absolute;
+    bottom: 0%;
+    border: 0;
+    margin: 0;
 }
-.carusel-button p {
+.carousel-control p {
      
     display: none; 
     
@@ -232,24 +187,21 @@ ol.carousel-indicators li.active {
 }   
 
 .carousel-inner > .item > img{
-    width:100%; height: 200px;
+    width:100%; height: 100px;
     margin: 0 auto;
     
-    
-    
 }
-.carousel-inner {
+ .carousel-caption{
                             
 position: relative;
 left: auto;
 right: auto;
-height: auto;
+height: 110px;
 text-align : left;
 color: black;
 /* font-family: 'Roboto', sans-serif; */
 font-size: 20px;"
 }
-
 .carousel-caption h4{
     font-size:15px;
     padding-top: 0px;
@@ -258,26 +210,11 @@ font-size: 20px;"
     font-size:20px;
     padding-top: 0px;
 }
-/* .carousel-item img{
-   height: 300px; */
-
-#right{
-    top: -220px;
-    left: 18px;
-}
-#left{
-    top:-220px;
-    
-    
+.carousel-item img{
+   height: 200px;
 }
 
 }
-
-.carousel .carousel-control-prev {
-  border-radius: $12;
-  overflow: hidden;
-}
-
 
 
 
@@ -289,8 +226,8 @@ font-size: 20px;"
         <nav  class="navbar navbar-expand-md navbar-dark bg-dark"role="navigation" id="nav">
             
             <div class="container-fluid" id="lolo">
-                <a class="navbar-brand" href="{{ route("home") }}" >
-                    <h1 id="brandname" style="padding: 0%; font-size:20px; letter-spacing:1px; font-family: 'Arvo', serif; " >All about Paws</h1>
+                <a class="navbar-brand" href="{{ url('/') }}" >
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -298,7 +235,9 @@ font-size: 20px;"
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -314,27 +253,44 @@ font-size: 20px;"
                             @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href={{route("home")}}>Home</a>
+                            <a class="nav-link" href="#">Home</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href={{route("about")}}>About</a>
+                            <a class="nav-link" href="#">About</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href={{route("create")}}>Add</a>
+                            <a class="nav-link" href="#">Add</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link"href={{route("profile")}}>Profile</a>
+                            <a class="nav-link" href="#">Edit</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href={{route("matches")}}>Matches</a>
+                            <a class="nav-link" href="#">Matches</a>
                           </li>
-                            <li class="nav-item dropdown" id="name"  >
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <li class=" dropdown" id="Theusername" style="padding-top:12px; color: white;" >
+                                
+                                    <a class=" dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">
+                                        {{ Auth::user()->name }}
+                                      {{-- <span class="caret"></span> --}}
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                      <li><a  href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                      document.getElementById('logout-form').submit();">
+                                         {{ __('Logout') }}
+                                     </a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                                    </ul>
+                                  
+                                {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     {{ Auth::user()->name }} </span>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                a class="dropdown-item" href="{{ route('logout') }}"
+                                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    < onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
@@ -342,7 +298,7 @@ font-size: 20px;"
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                                </div> --}}
                             </li>
                         @endguest
                     </ul>
@@ -353,11 +309,6 @@ font-size: 20px;"
         <main class="py-4">
             @yield('content')
         </main>
-        <div class="footer">
-            <div class="container" >
-                <p>&copy; Develop with FZ. all rights reserved.</p>
-            </div>
-        </div>
     </div>
 </body>
 </html>

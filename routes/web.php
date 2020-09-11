@@ -11,7 +11,10 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/notify', function () {
+    $user = \App\User::get();
+   Notification::send($user, new \App\Notifications\PostNewNotification());
+});
 
 Route::group(['middleware'=>['auth']],function(){
  Route::resource("/posts","PostsController");
