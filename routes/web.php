@@ -45,6 +45,4 @@ Route::get('/hello',function(){
 
    return view("hello");
 });
-Route::get('/hello', function(){
-    return view('hello');
-});
+Route::get('/profile/{id}', 'FriendsProfileController@index')->name('friend.profile');

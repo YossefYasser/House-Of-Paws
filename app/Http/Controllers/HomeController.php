@@ -78,6 +78,15 @@ class HomeController extends Controller
         $seen->save();
         return response()->json(['success'=>'Data is successfully added']);
     }
+    public function friendprofile(request $request)
+        
+
+    {   
+       
+        return dd($request);
+
+        
+    }
     
 
 }

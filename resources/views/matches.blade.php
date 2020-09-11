@@ -1,4 +1,8 @@
 @extends('layouts.app')
+<?php
+use Hashids\Hashids;
+$hashids = new Hashids();
+?>
 
     @section('content')
         
@@ -11,7 +15,7 @@
         @foreach ($users as $values) 
             @foreach ($values as  $value) 
                 @php($counter++)
- <div class="profilelink"><h4><a href="#" style="color: rgb(53,64,119); background: rgb(52,58,64,0.1)
+ <div class="profilelink"><h4><a href="{{ route('friend.profile', $hashids->encode($value->id)) }}" style="color: rgb(53,64,119); background: rgb(52,58,64,0.1)
 "
                      > {{$counter}} . {{$value->name}}</a></h4></div>
                   

@@ -11,9 +11,7 @@
 <p style="font-size:18px; margin-left:9px;  margin-bottom:0px;">Gender: {{$post->gender}}</p>
 <p style="font-size:18px; margin-left:9px;  margin-bottom:0px;">Joined at : {{ isset(Auth::user()->created_at) ? Auth::user()->created_at->format('m/d/Y') : Auth::user()->email }}</p>
 
-{{-- {!! Form::model($post,['method' => 'PATCH', "action"=>[ "PostsController@update",$post->id]]) !!}
-    {!! Form::submit('Edit Post',["class"=>"btn btn-primary"])!!}
-{!! Form::close() !!} --}}
+
 </div>
 <div class="profile_right" style="margin-left:300px;padding:15px;border-radius:5px; background-color:rgb(255,251,219,0.5); width:60%;
 ">
