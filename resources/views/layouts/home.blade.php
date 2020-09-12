@@ -60,7 +60,7 @@
                            font-family:'Arvo',serif;
                           " >
                            
-                          <span class="no"> <h2 >{{$post->title}} -   {{$post->gender}} </h2>
+                          <span class="no"> <h2 >{{$post->title}}</h2>
                            
                            <input  type ="hidden" id="userid" value={{$user->id}} >
                            {{-- <input id="name2"value={{$p}} > --}}

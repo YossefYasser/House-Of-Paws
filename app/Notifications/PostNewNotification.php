@@ -6,17 +6,17 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use App\user;
+
 
 class PostNewNotification extends Notification
 {
     use Queueable;
     private $user;
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct(User $user)
+    //  * Create a new notification instance.
+    //  *
+    //  * @return void
+    public function __construct(user $user)
     {
         //
         $this->user = $user;

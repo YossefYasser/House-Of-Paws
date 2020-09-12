@@ -285,6 +285,9 @@ font-size: 20px;"
 
 </head>
 <body>
+   
+
+
     <div id="app">
         <nav  class="navbar navbar-expand-md navbar-dark bg-dark"role="navigation" id="nav">
             
@@ -327,6 +330,25 @@ font-size: 20px;"
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href={{route("matches")}}>Matches</a>
+                            <li class="nav-item dropdown" id="notificaition"  >
+                                <?php $number = count(Auth::user()->unreadnotifications) ?>
+                              <a   id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                 @if(count(Auth::user()->unreadnotifications) == 0)
+                                 Notifications 
+                                 @else
+                                 Notifications  <span class="badge badge-danger badge-counter" id="badge"> {{count(Auth::user()->unreadnotifications)}} </span> 
+  
+                                 @endif
+                              </a> 
+                              <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                                  
+                                  <a class="dropdown-item" href={{route("matches")}}
+                                    >
+  
+                                      You Have {{count(Auth::user()->unreadnotifications)}} New Matches
+                                  </a>
+                              </div>
+                          </li>
                           </li>
                             <li class="nav-item dropdown" id="name"  >
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -359,5 +381,35 @@ font-size: 20px;"
             </div>
         </div>
     </div>
-</body>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js">
+</script>
+
+<script>
+ $(document).on('click','#notificaition',function(){
+    alert("likeInsert");
+
+    var token = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+
+        type:'post',
+        url:"{!! URL::to('/readn') !!}",
+        dataType: 'JSON',
+        data: {
+            "_method": 'get',
+            "_token": token,
+            
+        }, 
+        success:function(data){
+            // alert("likeInsert");
+            // alert(k);
+        },
+        error:function(){
+
+        },
+    });
+});
+
+</script>
+
 </html>

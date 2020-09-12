@@ -7,6 +7,8 @@ use App\post;
 use App\user;
 use App\likes;
 use App\seen;
+use Notification;
+use App\Notifications;
 
 class HomeController extends Controller
 {
@@ -55,6 +57,14 @@ class HomeController extends Controller
             DB::insert("insert into friends(user_id,friend_id)values('$request->userid','$request->usertoid')");
             DB::insert("insert into friends(user_id,friend_id)values('$request->usertoid','$request->userid')");
             DB::delete("delete from likes where user_to = '$request->userid' and user_from ='$request->usertoid'");
+            // send notification to both users
+            $userto =User::find($request->userid);
+            $userfrom=User::find($request->usertoid);
+            Notification::send($userto, new Notifications\PostNewNotification($userfrom));
+
+            $userfrom =User::find($request->userid);
+            $userto=User::find($request->usertoid);
+            Notification::send($userto, new Notifications\PostNewNotification($userfrom));
         }
         else{
             $like = new Likes;

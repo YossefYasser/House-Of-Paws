@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Post;
+use App\user;
 
 
 Auth::routes();
@@ -12,8 +13,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/notify', function () {
-    $user = \App\User::get();
-   Notification::send($user, new \App\Notifications\PostNewNotification());
+//     $userto = User::find(1);
+//     $userfrom=User::find(2);
+//    Notification::send($userto, new \App\Notifications\PostNewNotification($userfrom));
+// $user=  User::find(1);
+// foreach($user->notifications as $noti){
+//     print_r($noti->data["id"]); // lw 3ayz t access el id
+    
+//     echo "<br>";
+// }
+
+$userto =User::find($request->userid);
+$userfrom=User::find($request->usertoid);
+Notification::send($userto, new \App\Notifications\PostNewNotification($userfrom));
+
+$userfrom =User::find($request->userid);
+$userto=User::find($request->usertoid);
+Notification::send($userto, new \App\Notifications\PostNewNotification($userfrom));
 });
 
 Route::group(['middleware'=>['auth']],function(){
@@ -28,6 +44,9 @@ Route::group(['middleware'=>['auth']],function(){
     return view('about');
 })->name("about");
 Route::get('/matches', "MatchesController@showMatches")->name("matches");
+Route::get('/readn', "MatchesController@markread")->name("readn");
+
+
 
 });
 
