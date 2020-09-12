@@ -24,14 +24,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
-        
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
   /* video#bgvideo{
     position: fixed;
      min-height: 100%;
-    min-width: 100%;  
+    min-width: 100%;
     height: 100%;
     width: 100%;
     z-index: -100;
@@ -63,7 +63,7 @@ body{
     text-align: center;
     font-size: 30px;
     padding: 30px 20px 30px 20px;
-    top: 50px; 
+    top: 50px;
     width: 800px;
     height: 300px;
     margin: auto;
@@ -77,11 +77,11 @@ body{
     margin: 0 auto;
 }
 .carousel-inner .item img{
-    height: 400px; 
+    height: 400px;
     margin: 0 auto;
 }
 
- 
+
 ol.carousel-indicators {
    position: absolute;
    bottom: 5px;
@@ -119,12 +119,12 @@ ol.carousel-indicators li.active {
 
 .carousel-caption  {
    /* font-family: 'Arvo', serif; */
-   
+
    /* font-family: 'Grandstander', cursive; */
 }
 .navbar-brand a{
     padding-left: 20px;
-} 
+}
 .navbar-nav > li{
   padding-left:30px;
   padding-right:30px;
@@ -144,7 +144,7 @@ ol.carousel-indicators li.active {
     position: relative;
 }
 .profile_left {
-    
+
     border-radius: 5px;
     width: 220px;
     float: left;
@@ -166,12 +166,12 @@ ol.carousel-indicators li.active {
 }
 .carusel-button{
    /* padding:150px; */
-   
+
    padding-bottom:5px;
-   position:relative; 
+   position:relative;
    left: 0;
-   margin-left: 0; 
- 
+   margin-left: 0;
+
 }
  #right{
     left: 10px;
@@ -213,15 +213,15 @@ ol.carousel-indicators li.active {
 .carousel-indicators{
     height: auto;
     position: relative;
-   
+
 }
 .carusel-button p {
-     
-    display: none; 
-    
+
+    display: none;
+
 }
 .carusel-button{
-    position: relative;  
+    position: relative;
     top: 90px;
     width: 15px;
     height: 20px;
@@ -229,17 +229,17 @@ ol.carousel-indicators li.active {
    .carousel-inner{
    width: 300px;
    height:300px;
-}   
+}
 
 .carousel-inner > .item > img{
     width:100%; height: 200px;
     margin: 0 auto;
-    
-    
-    
+
+
+
 }
 .carousel-inner {
-                            
+
 position: relative;
 left: auto;
 right: auto;
@@ -267,8 +267,8 @@ font-size: 20px;"
 }
 #left{
     top:-220px;
-    
-    
+
+
 }
 
 }
@@ -281,13 +281,13 @@ font-size: 20px;"
 
 
 
-</style> 
+</style>
 
 </head>
 <body>
     <div id="app">
         <nav  class="navbar navbar-expand-md navbar-dark bg-dark"role="navigation" id="nav">
-            
+
             <div class="container-fluid" id="lolo">
                 <a class="navbar-brand" href="{{ route("home") }}" >
                     <h1 id="brandname" style="padding: 0%; font-size:20px; letter-spacing:1px; font-family: 'Arvo', serif; " >All about Paws</h1>
@@ -298,7 +298,7 @@ font-size: 20px;"
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -328,6 +328,10 @@ font-size: 20px;"
                           <li class="nav-item">
                             <a class="nav-link" href={{route("matches")}}>Matches</a>
                           </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href={{route("messages")}}>Messages</a>
+                            </li>
+
                             <li class="nav-item dropdown" id="name"  >
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     {{ Auth::user()->name }} </span>
@@ -359,5 +363,8 @@ font-size: 20px;"
             </div>
         </div>
     </div>
+<script>
+    @@yield('script')
+</script>
 </body>
 </html>

@@ -49,3 +49,13 @@ Route::get('/hello',function(){
    return view("hello");
 });
 Route::get('/profile/{id}', 'FriendsProfileController@index')->name('friend.profile');
+
+//Routes for Chat
+
+Route::group(['middleware'=>['auth']],function(){
+
+    Route::get('/messages','MessageController@index')->name('messages');
+    Route::get("/message/{id}",'MessageController@fetch')->name('message');
+    Route::post('/message','MessageController@sendMessage');
+
+});
