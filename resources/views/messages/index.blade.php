@@ -55,7 +55,6 @@
         border-radius: 64px;
     }
     .media-body p{
-        font-style: italic;
 
         font-size: large;
         margin:20px 0 ;
@@ -65,7 +64,7 @@
     }
     .message-wrapper {
         padding: 10px;
-        height: 550px;
+        height: 540px;
         background: #eeeeee;
         opacity: 0.95;
     }
@@ -146,7 +145,7 @@
                         <li class="user" id="{{$user->friend_id}}">
 
                             @if($user->unread)
-                                <span class="pending">{{ $user->unread/9 }}</span>
+                                <span class="pending">{{ $user->unread/5}}</span>
                             @endif
 
                             <div class="media">
@@ -155,7 +154,7 @@
                                 </div>
 
                                 <div class="media-body">
-                                    <p class="name">{{$user->title}}</p>
+                                    <p class="name">{{$user->name}}</p>
 
                                 </div>
                             </div>

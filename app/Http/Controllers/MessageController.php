@@ -21,9 +21,10 @@ class MessageController extends Controller
     public function index()
     {
 
-        $friends=DB::select("select friend_id,posts.user_id,posts.title,posts.path,count(is_read) as unread from friends
+        $friends=DB::select("select users.name,friend_id,posts.user_id,posts.title,posts.path,count(is_read) as unread from friends
         JOIN posts ON friend_id=posts.user_id and friend_id !=".Auth::id()."
         LEFT JOIN messages ON friend_id=messages.from and is_read=0 and messages.to=".Auth::id()."
+        join users on friend_id = users.id
         where friend_id !=".Auth::id()."
         group by friend_id,posts.user_id,posts.title,posts.path
 

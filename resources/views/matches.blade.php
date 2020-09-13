@@ -15,9 +15,7 @@ $hashids = new Hashids();
         @foreach ($users as $values)
             @foreach ($values as  $value)
                 @php($counter++)
- <div class="profilelink"><h4><a href="{{ route('friend.profile', $hashids->encode($value->id)) }}" style="color: rgb(53,64,119); background: rgb(52,58,64,0.1)
-"
-                     > {{$counter}} . {{$value->name}}</a></h4></div>
+ <div class="profilelink"><h4><a href="{{ route('friend.profile', $hashids->encode($value->id)) }}" style="color: rgb(53,64,119); "> {{$counter}} . {{$value->name}}</a></h4></div>
 
             @endforeach
         @endforeach

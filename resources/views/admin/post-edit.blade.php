@@ -27,10 +27,7 @@ Edit Post
                                     <input type="text" name="postContent" value="{{$post->body}}" class="form-control">
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Image</label>
-                                    <input type="text" name="postImage" value="{{$post->path}}" class="form-control">
-                                </div>
+                                
 
                                 <div class="form-group">
                                     <label>Species</label>

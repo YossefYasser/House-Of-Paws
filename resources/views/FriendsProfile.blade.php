@@ -17,8 +17,10 @@
 ">
     <h2 style="font-weight:bold">{{$post->title}}</h2>
     <h5>{{$post->body}}</h5>
+    <br>
+    <a href="{{route('messages')}}" class="btn btn-success" style="margin-top:0px ;margin-left:0px;">Open Messages To Chat With {{$user->name}} Now !!</a>
+
 </div>
-<a href="{{route('messages')}}" class="btn btn-success" style="margin-left: 300px;margin-top: 10px">Open Messages</a>
 <!--
 
 -->
