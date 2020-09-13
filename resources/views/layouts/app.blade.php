@@ -297,10 +297,12 @@ font-size: 20px;"
    
 
     <?php
+    if(!empty(Auth::user())){
     $id=Auth::user()->id ;
     $messages=  DB::select("select   count(is_read) as unread from messages
       join users on users.id = messages.to where users.id='$id' and is_read =0
      group by users.id");
+    }
      ?>
 
 
